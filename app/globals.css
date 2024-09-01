@@ -3,31 +3,86 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@layer base {
+	:root {
+		--background: 150 44% 95%; /* Light Emerald */
+		--foreground: 152 47.4% 11.2%; /* Darker Emerald */
+		--card: 150 44% 95%; /* Light Emerald */
+		--card-foreground: 152 47.4% 11.2%; /* Darker Emerald */
+		--popover: 150 44% 95%; /* Light Emerald */
+		--popover-foreground: 152 47.4% 11.2%; /* Darker Emerald */
+		--primary: 152 47.4% 50%; /* Emerald */
+		--primary-foreground: 150 40% 98%; /* Light Emerald */
+		--secondary: 150 40% 90%; /* Very Light Emerald */
+		--secondary-foreground: 152 47.4% 50%; /* Emerald */
+		--muted: 150 40% 90%; /* Very Light Emerald */
+		--muted-foreground: 153 16.3% 46.9%; /* Muted Emerald */
+		--accent: 150 40% 90%; /* Very Light Emerald */
+		--accent-foreground: 152 47.4% 50%; /* Emerald */
+		--destructive: 0 84.2% 60.2%; /* Red, unchanged */
+		--destructive-foreground: 150 40% 98%; /* Light Emerald */
+		--border: 150 31.8% 91.4%; /* Light Emerald */
+		--input: 150 31.8% 91.4%; /* Light Emerald */
+		--ring: 152 84% 50%; /* Emerald */
+		--chart-1: 152 76% 61%; /* Chart colors using emerald shades */
+		--chart-2: 153 58% 39%; /* Chart colors using emerald shades */
+		--chart-3: 154 37% 24%; /* Chart colors using emerald shades */
+		--chart-4: 150 74% 66%; /* Chart colors using emerald shades */
+		--chart-5: 151 87% 67%; /* Chart colors using emerald shades */
+		--radius: 0.5rem;
+	}
+	.dark {
+		--background: 152 47.4% 11.2%; /* Dark Emerald */
+		--foreground: 150 40% 98%; /* Light Emerald */
+		--card: 152 47.4% 11.2%; /* Dark Emerald */
+		--card-foreground: 150 40% 98%; /* Light Emerald */
+		--popover: 152 47.4% 11.2%; /* Dark Emerald */
+		--popover-foreground: 150 40% 98%; /* Light Emerald */
+		--primary: 150 40% 98%; /* Light Emerald */
+		--primary-foreground: 152 47.4% 11.2%; /* Dark Emerald */
+		--secondary: 153 32.6% 17.5%; /* Dark Muted Emerald */
+		--secondary-foreground: 150 40% 98%; /* Light Emerald */
+		--muted: 153 32.6% 17.5%; /* Dark Muted Emerald */
+		--muted-foreground: 154 20.2% 65.1%; /* Muted Emerald */
+		--accent: 153 32.6% 17.5%; /* Dark Muted Emerald */
+		--accent-foreground: 150 40% 98%; /* Light Emerald */
+		--destructive: 0 62.8% 30.6%; /* Red, unchanged */
+		--destructive-foreground: 150 40% 98%; /* Light Emerald */
+		--border: 153 32.6% 17.5%; /* Dark Muted Emerald */
+		--input: 153 32.6% 17.5%; /* Dark Muted Emerald */
+		--ring: 152 26.8% 83.9%; /* Emerald */
+		--chart-1: 152 70% 50%; /* Chart colors using emerald shades */
+		--chart-2: 153 60% 45%; /* Chart colors using emerald shades */
+		--chart-3: 154 80% 55%; /* Chart colors using emerald shades */
+		--chart-4: 150 65% 60%; /* Chart colors using emerald shades */
+		--chart-5: 151 75% 55%; /* Chart colors using emerald shades */
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
 }
